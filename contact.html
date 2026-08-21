@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking Inquiries | Kawizz Photography</title>
+  <meta name="description" content="Book Kawizz Photography for your luxury wedding, portrait session, or commercial campaign. Direct WhatsApp booking, availability check, and consultation.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#e2b774',
+              light: '#f3d49e',
+              dark: '#b88d4d',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0a0a0c] text-gray-100 font-sans antialiased selection:bg-[#e2b774] selection:text-black">
+
+  <!-- NAVIGATION BAR -->
+  <header id="mainNavbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-6 lg:px-12 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full border border-[#e2b774]/50 flex items-center justify-center bg-black/40 backdrop-blur-md group-hover:border-[#e2b774] transition-colors">
+        <span class="font-serif font-bold text-xl text-[#e2b774]">K</span>
+      </div>
+      <div>
+        <span class="font-display font-bold text-lg md:text-xl tracking-wider text-white uppercase block">KAWIZZ</span>
+        <span class="text-[10px] tracking-[0.25em] text-[#e2b774] uppercase block font-medium">PHOTOGRAPHY</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Home</a>
+      <a href="portfolio.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Portfolio</a>
+      <a href="client-portal.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Client Portal
+      </a>
+      <a href="services.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Services & Pricing</a>
+      <a href="about.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">About & Gear</a>
+      <a href="contact.html" class="nav-link text-[#e2b774] hover:text-[#e2b774] transition-colors font-semibold">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="client-portal.html" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border border-white/20 text-gray-200 hover:border-[#e2b774] hover:text-[#e2b774] transition-all">
+        Client Downloads
+      </a>
+    </div>
+
+    <button id="mobileMenuToggle" class="md:hidden w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-200 hover:text-[#e2b774]">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawerOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#111218] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div>
+          <span class="font-display font-bold text-lg text-white">KAWIZZ</span>
+          <span class="text-[9px] tracking-widest text-[#e2b774] block">PHOTOGRAPHY</span>
+        </div>
+        <button id="closeMobileDrawer" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-300 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <nav class="flex flex-col gap-5 mt-8 text-base font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="home" class="w-5 h-5"></i> Home</a>
+        <a href="portfolio.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="camera" class="w-5 h-5"></i> Portfolio & Gallery</a>
+        <a href="client-portal.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-emerald-400"></i> Client Delivery Hub</a>
+        <a href="services.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="tag" class="w-5 h-5"></i> Services & Packages</a>
+        <a href="about.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="user" class="w-5 h-5"></i> About & Gear Bag</a>
+        <a href="contact.html" class="text-[#e2b774] flex items-center gap-3"><i data-lucide="send" class="w-5 h-5"></i> Book a Shoot</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="client-portal.html" class="w-full block text-center py-3 text-xs uppercase font-semibold tracking-wider rounded-lg border border-[#e2b774] text-[#e2b774]">
+        Unlock Client Album
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================== -->
+  <!-- CONTACT & BOOKING HERO                                                   -->
+  <!-- ======================================================================== -->
+  <section class="pt-36 pb-12 px-6 lg:px-12 bg-[#0c0d12] border-b border-white/5 text-center">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#e2b774] block mb-3">Availability & Inquiries</span>
+      <h1 class="font-serif text-4xl sm:text-6xl font-extrabold text-white mb-6">Let's Frame Your Story</h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+        Fill in the details of your upcoming celebration or commercial project below. We respond with availability, custom moodboards, and full package brochures within 12 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- BOOKING FORM & DIRECT CONTACT SECTION                                    -->
+  <!-- ======================================================================== -->
+  <section class="py-20 px-6 lg:px-12 bg-[#0a0a0c]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Left: Interactive Booking Form -->
+      <div class="lg:col-span-7">
+        <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-[#e2b774]/30 shadow-2xl">
+          <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-white">Booking Inquiry Form</h3>
+              <p class="text-xs text-gray-400 mt-1">Directly connects with Kawizz via WhatsApp & Email</p>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-white/5 border border-[#e2b774]/30 flex items-center justify-center text-[#e2b774]">
+              <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            </div>
+          </div>
+
+          <form id="bookingInquiryForm" class="space-y-6">
+            <!-- Row 1: Name & Phone -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="inquiryName" class="block text-xs uppercase font-bold text-gray-300 mb-2">Your Full Name *</label>
+                <input 
+                  type="text" 
+                  id="inquiryName" 
+                  required
+                  placeholder="e.g. Kasun Ranasinghe" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white placeholder-gray-600 focus:outline-none focus:border-[#e2b774] text-sm"
+                />
+              </div>
+
+              <div>
+                <label for="inquiryPhone" class="block text-xs uppercase font-bold text-gray-300 mb-2">WhatsApp / Phone Number *</label>
+                <input 
+                  type="tel" 
+                  id="inquiryPhone" 
+                  required
+                  placeholder="e.g. +94 77 404 5147" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white placeholder-gray-600 focus:outline-none focus:border-[#e2b774] text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Row 2: Email & Event Type -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="inquiryEmail" class="block text-xs uppercase font-bold text-gray-300 mb-2">Email Address</label>
+                <input 
+                  type="email" 
+                  id="inquiryEmail" 
+                  placeholder="e.g. kasun@example.com" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white placeholder-gray-600 focus:outline-none focus:border-[#e2b774] text-sm"
+                />
+              </div>
+
+              <div>
+                <label for="inquiryEventType" class="block text-xs uppercase font-bold text-gray-300 mb-2">Event / Shoot Type *</label>
+                <select id="inquiryEventType" class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-[#e2b774] text-sm">
+                  <option value="Royal Wedding / Poruwa Ceremony">Royal Wedding / Poruwa Ceremony</option>
+                  <option value="Destination Pre-Shoot / Engagement">Destination Pre-Shoot / Engagement</option>
+                  <option value="Vogue Editorial / High-Fashion Portrait">Vogue Editorial / High-Fashion Portrait</option>
+                  <option value="Commercial & Brand Campaign">Commercial & Brand Campaign</option>
+                  <option value="Birthday Gala / Milestone Event">Birthday Gala / Milestone Event</option>
+                  <option value="Overseas Destination Commission">Overseas Destination Commission</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 3: Date & Venue -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="inquiryDate" class="block text-xs uppercase font-bold text-gray-300 mb-2">Target Event Date *</label>
+                <input 
+                  type="date" 
+                  id="inquiryDate" 
+                  required
+                  class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-[#e2b774] text-sm"
+                />
+              </div>
+
+              <div>
+                <label for="inquiryVenue" class="block text-xs uppercase font-bold text-gray-300 mb-2">Venue / City</label>
+                <input 
+                  type="text" 
+                  id="inquiryVenue" 
+                  placeholder="e.g. Cinnamon Grand Colombo / Ella" 
+                  class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white placeholder-gray-600 focus:outline-none focus:border-[#e2b774] text-sm"
+                />
+              </div>
+            </div>
+
+            <!-- Row 4: Package Choice -->
+            <div>
+              <label for="inquiryPackage" class="block text-xs uppercase font-bold text-gray-300 mb-2">Interested Package</label>
+              <select id="inquiryPackage" class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-[#e2b774] text-sm">
+                <option value="Royal Heritage Elite (LKR 320,000)">Royal Heritage Elite Collection (LKR 320,000)</option>
+                <option value="Silver Harmony (LKR 185,000)">Silver Harmony Collection (LKR 185,000)</option>
+                <option value="Vogue Portrait Session (LKR 65,000)">Vogue Portrait Session (LKR 65,000)</option>
+                <option value="Brand & Commercial Master (LKR 140,000)">Brand & Commercial Master (LKR 140,000)</option>
+                <option value="Custom Destination Quote">Custom Destination Quote</option>
+              </select>
+            </div>
+
+            <!-- Row 5: Special Message -->
+            <div>
+              <label for="inquiryMessage" class="block text-xs uppercase font-bold text-gray-300 mb-2">Tell Us About Your Vision</label>
+              <textarea 
+                id="inquiryMessage" 
+                rows="4" 
+                placeholder="Share your wedding timeline, moodboard ideas, specific locations you love, or special requests..."
+                class="w-full px-4 py-3.5 rounded-xl bg-black/60 border border-white/15 text-white placeholder-gray-600 focus:outline-none focus:border-[#e2b774] text-sm"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wider shadow-xl shadow-[#e2b774]/20 flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Send Booking Request via WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Direct WhatsApp Card & Studio Information -->
+      <div class="lg:col-span-5 space-y-8">
+        
+        <!-- Live WhatsApp Direct Card -->
+        <div class="glass-panel-gold p-8 rounded-3xl border border-emerald-500/40 relative shadow-2xl">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                <i data-lucide="message-circle" class="w-8 h-8"></i>
+              </div>
+              <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-black animate-pulse"></span>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Fastest Response</div>
+              <h4 class="font-serif text-xl font-bold text-white">Direct WhatsApp Chat</h4>
+              <p class="text-xs text-gray-400">Online & ready to answer queries</p>
+            </div>
+          </div>
+
+          <p class="text-xs text-gray-300 mb-6 leading-relaxed">
+            Need an immediate answer or checking if your date is free this weekend? Chat directly with Kawizz on WhatsApp for real-time quotation and instant sample portfolio links.
+          </p>
+
+          <a href="https://wa.me/94774045147?text=Hi%20Kawizz,%20I'm%20visiting%20your%20website%20and%20would%20love%20to%20check%20availability%20for%20a%20photography%20session!" target="_blank" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Chat on WhatsApp (+94 77 404 5147)</span>
+          </a>
+        </div>
+
+        <!-- Studio & Contact Details -->
+        <div class="glass-panel p-8 rounded-3xl border border-white/10 space-y-6">
+          <h4 class="font-serif text-xl font-bold text-white pb-3 border-b border-white/10">Studio Headquarters</h4>
+
+          <div class="space-y-4 text-xs text-gray-300">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#e2b774] flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Colombo Studio</strong>
+                <span>Ward Place, Colombo 07, Sri Lanka (By Appointment)</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#e2b774] flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Central Highlands Base</strong>
+                <span>Peradeniya Road, Kandy, Sri Lanka</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="mail" class="w-5 h-5 text-[#e2b774] flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Official Email</strong>
+                <span>inquiries@kawizzphotography.com</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Availability Calendar</strong>
+                <span class="text-emerald-400">Now Booking 2026/2027 Wedding Dates</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#07080a] text-gray-400 text-sm border-t border-white/5 pt-16 pb-12 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[#e2b774] flex items-center justify-center text-[#e2b774] font-serif font-bold text-lg">K</div>
+          <span class="font-display font-bold text-lg text-white uppercase">Kawizz Photography</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Premium wedding, portrait, and commercial visual storytelling based in Sri Lanka and capturing destinations worldwide.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="index.html" class="hover:text-[#e2b774]">Home</a></li>
+          <li><a href="portfolio.html" class="hover:text-[#e2b774]">Portfolio</a></li>
+          <li><a href="client-portal.html" class="hover:text-[#e2b774]">Client Portal</a></li>
+          <li><a href="services.html" class="hover:text-[#e2b774]">Services & Pricing</a></li>
+          <li><a href="contact.html" class="text-[#e2b774]">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Client Support</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="client-portal.html" class="hover:text-[#e2b774]">Client Download Portal</a></li>
+          <li><a href="services.html" class="hover:text-[#e2b774]">Pricing FAQ</a></li>
+          <li><a href="about.html" class="hover:text-[#e2b774]">Gear Specifications</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Emergency Line</h4>
+        <p class="text-xs text-gray-400">+94 77 404 5147</p>
+        <p class="text-xs text-gray-400 mt-1">inquiries@kawizzphotography.com</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>© <span class="dynamic-year">2026</span> Kawizz Photography. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+
+    // Check if query string has package (e.g. ?pkg=Royal+Heritage+Elite)
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pkg = urlParams.get('pkg');
+      if (pkg) {
+        const select = document.getElementById('inquiryPackage');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.toLowerCase().includes(pkg.toLowerCase())) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

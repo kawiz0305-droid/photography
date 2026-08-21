@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & Packages | Kawizz Photography</title>
+  <meta name="description" content="Transparent wedding, portrait, and commercial photography packages by Kawizz Photography. Interactive quote calculator, bespoke luxury albums, and aerial drone inclusions.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#e2b774',
+              light: '#f3d49e',
+              dark: '#b88d4d',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0a0a0c] text-gray-100 font-sans antialiased selection:bg-[#e2b774] selection:text-black">
+
+  <!-- NAVIGATION BAR -->
+  <header id="mainNavbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-6 lg:px-12 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full border border-[#e2b774]/50 flex items-center justify-center bg-black/40 backdrop-blur-md group-hover:border-[#e2b774] transition-colors">
+        <span class="font-serif font-bold text-xl text-[#e2b774]">K</span>
+      </div>
+      <div>
+        <span class="font-display font-bold text-lg md:text-xl tracking-wider text-white uppercase block">KAWIZZ</span>
+        <span class="text-[10px] tracking-[0.25em] text-[#e2b774] uppercase block font-medium">PHOTOGRAPHY</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Home</a>
+      <a href="portfolio.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Portfolio</a>
+      <a href="client-portal.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Client Portal
+      </a>
+      <a href="services.html" class="nav-link text-[#e2b774] hover:text-[#e2b774] transition-colors font-semibold">Services & Pricing</a>
+      <a href="about.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">About & Gear</a>
+      <a href="contact.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="contact.html" class="btn-gold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-semibold shadow-lg shadow-[#e2b774]/20">
+        Book Kawizz
+      </a>
+    </div>
+
+    <button id="mobileMenuToggle" class="md:hidden w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-200 hover:text-[#e2b774]">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawerOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#111218] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div>
+          <span class="font-display font-bold text-lg text-white">KAWIZZ</span>
+          <span class="text-[9px] tracking-widest text-[#e2b774] block">PHOTOGRAPHY</span>
+        </div>
+        <button id="closeMobileDrawer" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-5 mt-8 text-base font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="home" class="w-5 h-5"></i> Home</a>
+        <a href="portfolio.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="camera" class="w-5 h-5"></i> Portfolio & Gallery</a>
+        <a href="client-portal.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-emerald-400"></i> Client Delivery Hub</a>
+        <a href="services.html" class="text-[#e2b774] flex items-center gap-3"><i data-lucide="tag" class="w-5 h-5"></i> Services & Packages</a>
+        <a href="about.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="user" class="w-5 h-5"></i> About & Gear Bag</a>
+        <a href="contact.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="send" class="w-5 h-5"></i> Book a Shoot</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="contact.html" class="btn-gold w-full block text-center py-3 text-xs uppercase font-semibold tracking-wider rounded-lg">
+        Inquire Now
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================== -->
+  <!-- SERVICES HERO                                                            -->
+  <!-- ======================================================================== -->
+  <section class="pt-36 pb-16 px-6 lg:px-12 bg-[#0c0d12] border-b border-white/5 text-center">
+    <div class="max-w-4xl mx-auto">
+      <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#e2b774] block mb-3">Investment & Collections</span>
+      <h1 class="font-serif text-4xl sm:text-6xl font-extrabold text-white mb-6">Bespoke Photography Packages</h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+        Every wedding and editorial commission is handled personally by Kawizz. Transparent pricing, fine-art heirloom albums, and lightning-fast digital cloud deliveries.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- PRICING CARDS GRID                                                       -->
+  <!-- ======================================================================== -->
+  <section class="py-20 px-6 lg:px-12 bg-[#0a0a0c]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Package 1: Silver Harmony -->
+      <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-white/10 card-hover relative">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Essential Wedding</span>
+          <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">Silver Harmony</h3>
+          <div class="mb-6">
+            <span class="font-serif text-3xl font-bold text-[#e2b774]">LKR 185K</span>
+            <span class="text-xs text-gray-400 block mt-0.5">~ $650 USD • 1 Day (8 Hrs)</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+            Ideal for intimate weddings and single-day ceremonies needing comprehensive master coverage.
+          </p>
+
+          <div class="space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Kawizz Lead + 1 Assistant</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>250+ Color-Graded High-Res JPEGs</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Private Online Client Portal Access</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>12x24 Fine-Art Coffee Table Book</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>48-Hour Social Media Sneak Peek</span></div>
+          </div>
+        </div>
+
+        <div class="pt-8">
+          <a href="contact.html?pkg=Silver+Harmony" class="btn-outline-gold w-full py-3 rounded-xl text-xs uppercase font-bold tracking-wider">
+            Choose Silver
+          </a>
+        </div>
+      </div>
+
+      <!-- Package 2: Royal Heritage Elite (Featured) -->
+      <div class="glass-panel-gold rounded-3xl p-8 flex flex-col justify-between border-2 border-[#e2b774] relative card-hover transform lg:-translate-y-4 shadow-2xl shadow-[#e2b774]/15">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#e2b774] text-black font-bold text-[10px] uppercase tracking-widest shadow-md">
+          Most Loved by Couples
+        </div>
+
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-[#e2b774]">Full Heritage Experience</span>
+          <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">Royal Heritage Elite</h3>
+          <div class="mb-6">
+            <span class="font-serif text-3xl font-bold text-[#e2b774]">LKR 320K</span>
+            <span class="text-xs text-gray-400 block mt-0.5">~ $1,100 USD • Full Multi-Day</span>
+          </div>
+          <p class="text-xs text-gray-300 mb-6 leading-relaxed">
+            Our flagship complete package covering Poruwa, Reception, Homecoming, and Aerial views.
+          </p>
+
+          <div class="space-y-3 pt-6 border-t border-[#e2b774]/30 text-xs text-gray-200">
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Kawizz + 2 Senior Photographers</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>4K Drone Aerial Cinematic Highlights</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>500+ Retouched Master Digital Files</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>12x30 Leather Flush-Mount Album (50p)</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Two 8x12 Parent Keepsake Albums</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Pre-Shoot 3-Hour Session Included</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>VIP Lifetime Client Portal Access</span></div>
+          </div>
+        </div>
+
+        <div class="pt-8">
+          <a href="contact.html?pkg=Royal+Heritage+Elite" class="btn-gold w-full py-3.5 rounded-xl text-xs uppercase font-bold tracking-wider shadow-lg">
+            Reserve Elite
+          </a>
+        </div>
+      </div>
+
+      <!-- Package 3: Vogue Portrait -->
+      <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-white/10 card-hover relative">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Editorial & Personal</span>
+          <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">Vogue Portrait</h3>
+          <div class="mb-6">
+            <span class="font-serif text-3xl font-bold text-[#e2b774]">LKR 65K</span>
+            <span class="text-xs text-gray-400 block mt-0.5">~ $220 USD • 2-3 Hours</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+            High-fashion modeling, bridal solo, anniversary, or executive editorial session.
+          </p>
+
+          <div class="space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Creative Direction by Kawizz</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>3 Mood & Lighting Setups / Outfits</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>30 Magazine-Retouched High-Res Photos</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Studio or Outdoor Location of Choice</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Express 48-Hour Delivery via Portal</span></div>
+          </div>
+        </div>
+
+        <div class="pt-8">
+          <a href="contact.html?pkg=Vogue+Portrait" class="btn-outline-gold w-full py-3 rounded-xl text-xs uppercase font-bold tracking-wider">
+            Book Portrait
+          </a>
+        </div>
+      </div>
+
+      <!-- Package 4: Brand & Commercial -->
+      <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-white/10 card-hover relative">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Commercial & Brands</span>
+          <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">Brand Campaign</h3>
+          <div class="mb-6">
+            <span class="font-serif text-3xl font-bold text-[#e2b774]">LKR 140K</span>
+            <span class="text-xs text-gray-400 block mt-0.5">~ $480 USD • Full Day Shoot</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-6 leading-relaxed">
+            Luxury product catalog, fashion lookbook, hotel & resort architectural photography.
+          </p>
+
+          <div class="space-y-3 pt-6 border-t border-white/10 text-xs text-gray-300">
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Full Commercial & Global Ad Rights</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Tethered Live Screen Review</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>Hasselblad 100MP Optical Sharpness</span></div>
+            <div class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[#e2b774] flex-shrink-0 mt-0.5"></i> <span>72-Hour Rapid Export (TIFF + JPEG)</span></div>
+          </div>
+        </div>
+
+        <div class="pt-8">
+          <a href="contact.html?pkg=Brand+Campaign" class="btn-outline-gold w-full py-3 rounded-xl text-xs uppercase font-bold tracking-wider">
+            Inquire Brand
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- INTERACTIVE PRICING ESTIMATOR                                            -->
+  <!-- ======================================================================== -->
+  <section class="py-20 px-6 lg:px-12 bg-[#0e0f16] border-y border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#e2b774]">Instant Estimator</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Customize Your Dream Package</h2>
+        <p class="text-gray-400 text-xs sm:text-sm mt-2">Add optional cinematic drone coverage, parent albums, or pre-shoots to see an instant quotation.</p>
+      </div>
+
+      <div id="pricingCalculator" class="glass-panel p-8 sm:p-10 rounded-3xl border border-[#e2b774]/30 shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Left: Controls -->
+          <div class="space-y-6">
+            <div>
+              <label class="block text-xs uppercase font-bold text-gray-300 mb-2">1. Select Base Service</label>
+              <select id="calcBasePackage" class="w-full px-4 py-3 rounded-xl bg-black/60 border border-white/15 text-white focus:outline-none focus:border-[#e2b774] text-sm">
+                <option value="185000">Silver Harmony Wedding (LKR 185,000)</option>
+                <option value="320000" selected>Royal Heritage Elite Wedding (LKR 320,000)</option>
+                <option value="65000">Vogue Portrait Session (LKR 65,000)</option>
+                <option value="140000">Brand Campaign Commercial (LKR 140,000)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs uppercase font-bold text-gray-300 mb-3">2. Optional Add-ons</label>
+              <div class="space-y-3">
+                <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-[#e2b774]/50 transition-colors">
+                  <input type="checkbox" id="calcAddDrone" class="w-4 h-4 rounded text-[#e2b774] accent-[#e2b774]">
+                  <div class="text-xs">
+                    <span class="font-semibold text-white block">4K Drone Aerial Cinematic Reel</span>
+                    <span class="text-gray-400">+ LKR 45,000 (~ $150 USD)</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-[#e2b774]/50 transition-colors">
+                  <input type="checkbox" id="calcAddAlbum" class="w-4 h-4 rounded text-[#e2b774] accent-[#e2b774]">
+                  <div class="text-xs">
+                    <span class="font-semibold text-white block">Additional Luxury Parent Keepsake Album</span>
+                    <span class="text-gray-400">+ LKR 35,000 (~ $115 USD)</span>
+                  </div>
+                </label>
+
+                <label class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:border-[#e2b774]/50 transition-colors">
+                  <input type="checkbox" id="calcAddPreShoot" class="w-4 h-4 rounded text-[#e2b774] accent-[#e2b774]">
+                  <div class="text-xs">
+                    <span class="font-semibold text-white block">Destination Pre-Shoot (Ella / Galle / Sigiriya)</span>
+                    <span class="text-gray-400">+ LKR 50,000 (~ $165 USD)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Live Total Box -->
+          <div class="flex flex-col justify-between p-6 rounded-2xl bg-black/80 border border-white/10 text-center md:text-left">
+            <div>
+              <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774]">Estimated Investment</span>
+              <div id="calcTotalLKR" class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">LKR 320,000</div>
+              <div id="calcTotalUSD" class="text-xs text-gray-400 font-mono mt-1">~ $1,067 USD</div>
+
+              <div class="mt-6 pt-6 border-t border-white/10 space-y-2 text-xs text-gray-400">
+                <p class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Includes Full-Res Client Download Portal</p>
+                <p class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Lifetime Online Cloud Backup</p>
+                <p class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> 48-Hour Sneak Peek Guaranteed</p>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <a href="contact.html" class="btn-gold w-full py-3.5 rounded-xl text-xs uppercase font-bold tracking-wider shadow-lg">
+                Proceed with this Estimate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- FAQ ACCORDION SECTION                                                    -->
+  <!-- ======================================================================== -->
+  <section class="py-20 px-6 lg:px-12 bg-[#0a0a0c]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#e2b774]">Frequently Asked Questions</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Everything You Need to Know</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-serif text-base sm:text-lg font-semibold text-white">How fast do we receive our wedding and portrait photos?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e2b774] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5">
+            We deliver an exclusive 15–20 photo "Sneak Peek" within 48 hours for you to share on Instagram and WhatsApp. The complete fully-retouched high-resolution gallery (250–500+ images) is uploaded to your private Client Portal within 2 to 3 weeks.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-serif text-base sm:text-lg font-semibold text-white">How does the Client Download Portal work?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e2b774] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5">
+            Each couple or client receives a private passcode (e.g. your wedding PIN). Once logged into the portal on our website, you can view your photos in 4K resolution, heart your favorites for printed albums, and download individual photos or the entire batch in full print quality with a single click.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-serif text-base sm:text-lg font-semibold text-white">Do you travel across Sri Lanka and worldwide destinations?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e2b774] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5">
+            Yes! While based in Colombo and Kandy, Kawizz travels across Sri Lanka (Ella, Sigiriya, Galle, Mirissa, Nuwara Eliya, Jaffna) as well as overseas destination weddings in Dubai, Maldives, Australia, and the UK.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="font-serif text-base sm:text-lg font-semibold text-white">How do we secure our wedding date?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#e2b774] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden p-6 pt-0 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5">
+            We require a 30% advance deposit along with a signed photography agreement to lock in your date exclusively. We take a limited number of weddings per month to maintain the highest quality standards.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#07080a] text-gray-400 text-sm border-t border-white/5 pt-16 pb-12 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[#e2b774] flex items-center justify-center text-[#e2b774] font-serif font-bold text-lg">K</div>
+          <span class="font-display font-bold text-lg text-white uppercase">Kawizz Photography</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Premium wedding, portrait, and commercial visual storytelling based in Sri Lanka and capturing destinations worldwide.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="index.html" class="hover:text-[#e2b774]">Home</a></li>
+          <li><a href="portfolio.html" class="hover:text-[#e2b774]">Portfolio</a></li>
+          <li><a href="client-portal.html" class="hover:text-[#e2b774]">Client Portal</a></li>
+          <li><a href="services.html" class="text-[#e2b774]">Services & Pricing</a></li>
+          <li><a href="about.html" class="hover:text-[#e2b774]">About Kawizz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Packages</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="contact.html?pkg=Royal+Heritage+Elite" class="hover:text-[#e2b774]">Royal Heritage Elite</a></li>
+          <li><a href="contact.html?pkg=Silver+Harmony" class="hover:text-[#e2b774]">Silver Harmony</a></li>
+          <li><a href="contact.html?pkg=Vogue+Portrait" class="hover:text-[#e2b774]">Vogue Portrait</a></li>
+          <li><a href="contact.html?pkg=Brand+Campaign" class="hover:text-[#e2b774]">Brand Commercial</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Inquiries</h4>
+        <p class="text-xs text-gray-400">+94 77 404 5147</p>
+        <p class="text-xs text-gray-400 mt-1">inquiries@kawizzphotography.com</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>© <span class="dynamic-year">2026</span> Kawizz Photography. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

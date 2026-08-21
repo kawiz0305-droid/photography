@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & Camera Gear Bag | Kawizz Photography</title>
+  <meta name="description" content="Discover the artistic vision, international awards, and professional camera gear bag behind Kawizz Photography - Master visual artist based in Sri Lanka.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#e2b774',
+              light: '#f3d49e',
+              dark: '#b88d4d',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0a0a0c] text-gray-100 font-sans antialiased selection:bg-[#e2b774] selection:text-black">
+
+  <!-- NAVIGATION BAR -->
+  <header id="mainNavbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-6 lg:px-12 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full border border-[#e2b774]/50 flex items-center justify-center bg-black/40 backdrop-blur-md group-hover:border-[#e2b774] transition-colors">
+        <span class="font-serif font-bold text-xl text-[#e2b774]">K</span>
+      </div>
+      <div>
+        <span class="font-display font-bold text-lg md:text-xl tracking-wider text-white uppercase block">KAWIZZ</span>
+        <span class="text-[10px] tracking-[0.25em] text-[#e2b774] uppercase block font-medium">PHOTOGRAPHY</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Home</a>
+      <a href="portfolio.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Portfolio</a>
+      <a href="client-portal.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Client Portal
+      </a>
+      <a href="services.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Services & Pricing</a>
+      <a href="about.html" class="nav-link text-[#e2b774] hover:text-[#e2b774] transition-colors font-semibold">About & Gear</a>
+      <a href="contact.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="contact.html" class="btn-gold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-semibold shadow-lg shadow-[#e2b774]/20">
+        Book Kawizz
+      </a>
+    </div>
+
+    <button id="mobileMenuToggle" class="md:hidden w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-200 hover:text-[#e2b774]">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawerOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#111218] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div>
+          <span class="font-display font-bold text-lg text-white">KAWIZZ</span>
+          <span class="text-[9px] tracking-widest text-[#e2b774] block">PHOTOGRAPHY</span>
+        </div>
+        <button id="closeMobileDrawer" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-300 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <nav class="flex flex-col gap-5 mt-8 text-base font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="home" class="w-5 h-5"></i> Home</a>
+        <a href="portfolio.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="camera" class="w-5 h-5"></i> Portfolio & Gallery</a>
+        <a href="client-portal.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-emerald-400"></i> Client Delivery Hub</a>
+        <a href="services.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="tag" class="w-5 h-5"></i> Services & Packages</a>
+        <a href="about.html" class="text-[#e2b774] flex items-center gap-3"><i data-lucide="user" class="w-5 h-5"></i> About & Gear Bag</a>
+        <a href="contact.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3"><i data-lucide="send" class="w-5 h-5"></i> Book a Shoot</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="contact.html" class="btn-gold w-full block text-center py-3 text-xs uppercase font-semibold tracking-wider rounded-lg">
+        Inquire Now
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================== -->
+  <!-- ABOUT HERO & STORY                                                       -->
+  <!-- ======================================================================== -->
+  <section class="pt-36 pb-20 px-6 lg:px-12 bg-[#0c0d12] border-b border-white/5">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left: Portrait Image & Badges -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative rounded-3xl overflow-hidden border-2 border-[#e2b774]/30 shadow-2xl">
+          <img 
+            src="images/kawizz_portrait_cap.jpg" 
+            alt="Kawizz Photographer Portrait" 
+            class="w-full h-auto object-cover filter contrast-105"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          
+          <div class="absolute bottom-6 left-6 right-6">
+            <span class="text-xs uppercase tracking-widest text-[#e2b774] font-semibold">Lead Visual Artist & Director</span>
+            <h3 class="font-serif text-2xl font-bold text-white">Kawizz</h3>
+            <p class="text-xs text-gray-300 mt-1">Over 8+ Years Framing Sri Lanka's Most Iconic Moments</p>
+          </div>
+        </div>
+
+        <!-- Floating Award Badge -->
+        <div class="absolute -bottom-6 -right-4 glass-panel-gold p-4 rounded-2xl border border-[#e2b774] shadow-2xl flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#e2b774] text-black flex items-center justify-center font-bold">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Asia Winner 2025</div>
+            <div class="text-[10px] text-[#e2b774]">Wedding Guild of Asia</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Story Narrative -->
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#e2b774] block">The Visionary Behind Kawizz Photography</span>
+        <h1 class="font-serif text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+          "Great photography is not about perfection; it is about pure, unfiltered human feeling."
+        </h1>
+
+        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+          Hello! I am <strong class="text-white">Kawizz</strong>, a Sri Lankan visual storyteller dedicated to framing genuine love, quiet tears, explosive laughter, and cinematic vistas. For over eight years, I have documented royal weddings in Colombo, misty vows along the central mountain spine of Ella and Nuwara Eliya, and high-fashion editorial campaigns for international publications.
+        </p>
+
+        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+          My philosophy revolves around organic connection. I believe the most unforgettable photographs occur when you forget the camera exists. By combining gentle, unforced direction with high-end medium-format and full-frame glass, we turn fleeting moments into heirloom art you will treasure for decades.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+          <div>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-[#e2b774]">250+</div>
+            <div class="text-xs text-gray-400 mt-0.5">Weddings Documented</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-white">18</div>
+            <div class="text-xs text-gray-400 mt-0.5">Industry Awards</div>
+          </div>
+          <div>
+            <div class="font-serif text-2xl sm:text-3xl font-bold text-[#e2b774]">14</div>
+            <div class="text-xs text-gray-400 mt-0.5">Countries Traveled</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- WHAT'S IN MY CAMERA BAG (GEAR SHOWCASE)                                   -->
+  <!-- ======================================================================== -->
+  <section class="py-24 px-6 lg:px-12 bg-[#0a0a0c]">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#e2b774]">Optical Perfection</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">What's in My Camera Bag</h2>
+        <p class="text-gray-400 text-sm sm:text-base">
+          We invest in top-tier optical and lighting engineering to ensure your wedding memories are immortalized with museum-grade sharpness, dynamic range, and dual-backup redundancy.
+        </p>
+      </div>
+
+      <!-- Gear Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Gear 1 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Primary Camera Bodies</span>
+            <i data-lucide="camera" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">Sony Alpha 7R V & Alpha 1</h3>
+          <p class="text-xs text-gray-400 font-mono">61.0 MP BSI Sensor • 8-Stop Image Stabilization • Dual CFexpress Type A</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Delivers jaw-dropping dynamic range, true-to-life skin tones, and extreme crop flexibility for huge fine-art print enlargements.
+          </p>
+        </div>
+
+        <!-- Gear 2 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Prime Master Lenses</span>
+            <i data-lucide="aperture" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">Sony FE 50mm & 85mm f/1.2 / f/1.4 GM</h3>
+          <p class="text-xs text-gray-400 font-mono">XA Optics • 11-Blade Circular Aperture • Nano AR Coating</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Our secret weapon for dreamy, creamy background bokeh and ultra-sharp romantic portraiture even in candlelit venues.
+          </p>
+        </div>
+
+        <!-- Gear 3 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Cinematic Aerial Drone</span>
+            <i data-lucide="navigation" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">DJI Mavic 3 Pro Cine (Triple-Camera)</h3>
+          <p class="text-xs text-gray-400 font-mono">Hasselblad 4/3 CMOS • Apple ProRes 5.1K • 70mm Tele</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Sweeping cinematic vistas framing your venue, beach sunset walks, and historical Sri Lankan landscapes from above.
+          </p>
+        </div>
+
+        <!-- Gear 4 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Studio & Location Strobes</span>
+            <i data-lucide="sun" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">Profoto B10X Plus & A10 AirTTL</h3>
+          <p class="text-xs text-gray-400 font-mono">500Ws High-Speed Sync • OCF Beauty Dishes & Softboxes</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Ensures soft, flattering magazine-quality light anywhere—whether in a dark ballroom or under harsh midday sun.
+          </p>
+        </div>
+
+        <!-- Gear 5 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Medium Format Studio</span>
+            <i data-lucide="disc" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">Hasselblad X2D 100C</h3>
+          <p class="text-xs text-gray-400 font-mono">100-Megapixel Medium Format • 16-Bit Color Depth</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Reserved for high-fashion lookbooks and luxury brand campaigns demanding unrivaled micro-contrast and tonal gradation.
+          </p>
+        </div>
+
+        <!-- Gear 6 -->
+        <div class="glass-panel p-8 rounded-2xl border border-white/10 card-hover space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase font-mono tracking-widest text-[#e2b774] font-semibold">Post-Production Rig</span>
+            <i data-lucide="monitor" class="w-6 h-6 text-[#e2b774]"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-white">Apple M3 Max Studio & EIZO 4K</h3>
+          <p class="text-xs text-gray-400 font-mono">Hardware Calibrated • 100% Adobe RGB & DCI-P3 Color Space</p>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Every digital master and print is meticulously color-graded with museum-grade precision before delivery to your client portal.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- AWARDS & EXHIBITIONS                                                     -->
+  <!-- ======================================================================== -->
+  <section class="py-20 px-6 lg:px-12 bg-[#0e0f16] border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-[#e2b774]">Accolades & Features</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Recognitions Across the Globe</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-panel p-6 rounded-2xl flex items-center justify-between border border-white/10 hover:border-[#e2b774]/50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xl font-bold text-[#e2b774]">2025</span>
+            <div>
+              <h4 class="font-serif text-base sm:text-lg font-bold text-white">Asia Wedding Photographer of the Year</h4>
+              <p class="text-xs text-gray-400">International Wedding Guild • Grand Prix Winner</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-[#e2b774]/15 text-[#e2b774] border border-[#e2b774]/30">Gold Trophy</span>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl flex items-center justify-between border border-white/10 hover:border-[#e2b774]/50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xl font-bold text-[#e2b774]">2024</span>
+            <div>
+              <h4 class="font-serif text-base sm:text-lg font-bold text-white">Vogue Ceylon High-Fashion Feature</h4>
+              <p class="text-xs text-gray-400">Vogue Visuals • Editorial Portrait Portfolio</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-gray-300">Feature</span>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl flex items-center justify-between border border-white/10 hover:border-[#e2b774]/50 transition-colors">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xl font-bold text-[#e2b774]">2023</span>
+            <div>
+              <h4 class="font-serif text-base sm:text-lg font-bold text-white">National Geographic Traveler Sri Lanka</h4>
+              <p class="text-xs text-gray-400">NatGeo Wild & Heritage • Sigiriya & Central Highlands</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-white/10 text-gray-300">Exhibition</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#07080a] text-gray-400 text-sm border-t border-white/5 pt-16 pb-12 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[#e2b774] flex items-center justify-center text-[#e2b774] font-serif font-bold text-lg">K</div>
+          <span class="font-display font-bold text-lg text-white uppercase">Kawizz Photography</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Premium wedding, portrait, and commercial visual storytelling based in Sri Lanka and capturing destinations worldwide.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="index.html" class="hover:text-[#e2b774]">Home</a></li>
+          <li><a href="portfolio.html" class="hover:text-[#e2b774]">Portfolio</a></li>
+          <li><a href="client-portal.html" class="hover:text-[#e2b774]">Client Portal</a></li>
+          <li><a href="services.html" class="hover:text-[#e2b774]">Services & Pricing</a></li>
+          <li><a href="about.html" class="text-[#e2b774]">About Kawizz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Get In Touch</h4>
+        <p class="text-xs text-gray-400">+94 77 404 5147</p>
+        <p class="text-xs text-gray-400 mt-1">inquiries@kawizzphotography.com</p>
+        <p class="text-xs text-gray-400 mt-1">Colombo & Kandy Studios</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Bookings</h4>
+        <a href="contact.html" class="btn-gold px-5 py-2.5 rounded-lg text-xs uppercase font-bold tracking-wider inline-block">
+          Reserve a Date
+        </a>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>© <span class="dynamic-year">2026</span> Kawizz Photography. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

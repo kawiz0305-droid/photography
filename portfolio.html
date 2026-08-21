@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & Gallery | Kawizz Photography</title>
+  <meta name="description" content="Explore high-resolution master collections by Kawizz Photography across Weddings, Portraits, Landscapes, Editorial Fashion, and Commercial visual arts.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#e2b774',
+              light: '#f3d49e',
+              dark: '#b88d4d',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0a0a0c] text-gray-100 font-sans antialiased selection:bg-[#e2b774] selection:text-black">
+
+  <!-- NAVIGATION BAR -->
+  <header id="mainNavbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 px-6 lg:px-12 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full border border-[#e2b774]/50 flex items-center justify-center bg-black/40 backdrop-blur-md group-hover:border-[#e2b774] transition-colors">
+        <span class="font-serif font-bold text-xl text-[#e2b774]">K</span>
+      </div>
+      <div>
+        <span class="font-display font-bold text-lg md:text-xl tracking-wider text-white uppercase block">KAWIZZ</span>
+        <span class="text-[10px] tracking-[0.25em] text-[#e2b774] uppercase block font-medium">PHOTOGRAPHY</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="index.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Home</a>
+      <a href="portfolio.html" class="nav-link text-[#e2b774] hover:text-[#e2b774] transition-colors">Portfolio</a>
+      <a href="client-portal.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Client Portal
+      </a>
+      <a href="services.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Services & Pricing</a>
+      <a href="about.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">About & Gear</a>
+      <a href="contact.html" class="nav-link text-gray-300 hover:text-[#e2b774] transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="client-portal.html" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border border-white/20 text-gray-200 hover:border-[#e2b774] hover:text-[#e2b774] transition-all">
+        Client Downloads
+      </a>
+      <a href="contact.html" class="btn-gold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-semibold shadow-lg shadow-[#e2b774]/20">
+        Book Kawizz
+      </a>
+    </div>
+
+    <button id="mobileMenuToggle" class="md:hidden w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-200 hover:text-[#e2b774]">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="drawerOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#111218] border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 p-8 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div>
+          <span class="font-display font-bold text-lg text-white">KAWIZZ</span>
+          <span class="text-[9px] tracking-widest text-[#e2b774] block">PHOTOGRAPHY</span>
+        </div>
+        <button id="closeMobileDrawer" class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-300 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-5 mt-8 text-base font-medium">
+        <a href="index.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="home" class="w-5 h-5"></i> Home
+        </a>
+        <a href="portfolio.html" class="text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="camera" class="w-5 h-5"></i> Portfolio & Gallery
+        </a>
+        <a href="client-portal.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="lock" class="w-5 h-5 text-emerald-400"></i> Client Delivery Hub
+        </a>
+        <a href="services.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="tag" class="w-5 h-5"></i> Services & Packages
+        </a>
+        <a href="about.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="user" class="w-5 h-5"></i> About & Gear Bag
+        </a>
+        <a href="contact.html" class="text-gray-300 hover:text-[#e2b774] flex items-center gap-3">
+          <i data-lucide="send" class="w-5 h-5"></i> Book a Shoot
+        </a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-white/10 space-y-3">
+      <a href="client-portal.html" class="w-full block text-center py-3 text-xs uppercase font-semibold tracking-wider rounded-lg border border-[#e2b774] text-[#e2b774]">
+        Unlock Client Album
+      </a>
+      <a href="contact.html" class="btn-gold w-full block text-center py-3 text-xs uppercase font-semibold tracking-wider rounded-lg">
+        Inquire Now
+      </a>
+    </div>
+  </aside>
+
+  <!-- ======================================================================== -->
+  <!-- PORTFOLIO HEADER & SEARCH / FILTER SECTION                               -->
+  <!-- ======================================================================== -->
+  <section class="pt-36 pb-16 px-6 lg:px-12 bg-[#0c0d12] border-b border-white/5">
+    <div class="max-w-7xl mx-auto text-center">
+      <span class="text-xs uppercase tracking-[0.3em] font-bold text-[#e2b774] block mb-3">Master Anthology</span>
+      <h1 class="font-serif text-4xl sm:text-6xl font-extrabold text-white mb-6">Visual Portfolio</h1>
+      <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-10">
+        Filter through our curated wildlife photography, high-fashion portraits, dramatic island landscapes, street moments, and commercial commissions. Click any image to view in 4K with camera EXIF details and instant master file download.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="max-w-xl mx-auto mb-8 relative">
+        <input 
+          type="text" 
+          id="gallerySearchInput"
+          placeholder="Search by title, location (Ella, Galle, Sigiriya), camera or tag..."
+          class="w-full px-5 py-3.5 pl-12 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e2b774] transition-all text-sm backdrop-blur-md"
+        />
+        <i data-lucide="search" class="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+        <button data-filter="all" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#e2b774] text-black shadow-lg shadow-[#e2b774]/20 transition-all">
+          All Works
+        </button>
+        <button data-filter="portraits" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all">
+          Portraits & Fashion
+        </button>
+        <button data-filter="landscapes" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all">
+          Wildlife & Landscapes
+        </button>
+        <button data-filter="street" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all">
+          Street & Night
+        </button>
+        <button data-filter="events" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all">
+          Luxe Events
+        </button>
+        <button data-filter="commercial" class="filter-btn px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all">
+          Commercial
+        </button>
+      </div>
+
+      <!-- Live Counter -->
+      <div class="mt-6 text-xs text-gray-400 font-mono flex items-center justify-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#e2b774]"></span>
+        <span id="photoCount">Loading photographs...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================== -->
+  <!-- MAIN GALLERY GRID CONTAINER                                              -->
+  <!-- ======================================================================== -->
+  <main class="py-16 px-6 lg:px-12 bg-[#0a0a0c] min-h-[60vh]">
+    <div class="max-w-7xl mx-auto">
+      <div id="galleryGrid" class="masonry-grid">
+        <!-- Rendered by js/gallery.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================== -->
+  <!-- CLIENT VAULT CALLOUT BANNER                                              -->
+  <!-- ======================================================================== -->
+  <section class="py-16 px-6 lg:px-12 bg-[#101117] border-t border-white/5">
+    <div class="max-w-5xl mx-auto glass-panel p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-[#e2b774]/20">
+      <div class="space-y-2 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+          <span>Are you an existing client?</span>
+        </div>
+        <h3 class="font-serif text-2xl md:text-3xl font-bold text-white">Access Your Private Download Vault</h3>
+        <p class="text-gray-400 text-sm max-w-md">
+          Enter your shoot passcode to download your full-res gallery, proof favorite selections, and download in batch archives.
+        </p>
+      </div>
+      <a href="client-portal.html" class="btn-gold px-7 py-3.5 rounded-xl text-xs uppercase font-bold tracking-wider whitespace-nowrap shadow-lg">
+        Unlock My Album
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#07080a] text-gray-400 text-sm border-t border-white/5 pt-16 pb-12 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[#e2b774] flex items-center justify-center text-[#e2b774] font-serif font-bold text-lg">K</div>
+          <span class="font-display font-bold text-lg text-white uppercase">Kawizz Photography</span>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Premium wedding, portrait, and commercial visual storytelling based in Sri Lanka and capturing destinations worldwide.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="index.html" class="hover:text-[#e2b774] transition-colors">Home</a></li>
+          <li><a href="portfolio.html" class="text-[#e2b774]">Portfolio</a></li>
+          <li><a href="client-portal.html" class="hover:text-[#e2b774] transition-colors">Client Portal</a></li>
+          <li><a href="services.html" class="hover:text-[#e2b774] transition-colors">Services & Pricing</a></li>
+          <li><a href="about.html" class="hover:text-[#e2b774] transition-colors">About Kawizz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Bookings</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li><a href="contact.html" class="hover:text-[#e2b774]">Wedding Inquiries</a></li>
+          <li><a href="contact.html" class="hover:text-[#e2b774]">Fashion & Editorial Shoots</a></li>
+          <li><a href="contact.html" class="hover:text-[#e2b774]">Commercial Brand Campaigns</a></li>
+          <li><a href="contact.html" class="hover:text-[#e2b774]">Destination Travel Sessions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Direct Contact</h4>
+        <ul class="space-y-2.5 text-xs">
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-[#e2b774]"></i> +94 77 404 5147</li>
+          <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-[#e2b774]"></i> inquiries@kawizzphotography.com</li>
+          <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#e2b774]"></i> Colombo & Kandy, Sri Lanka</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+      <p>© <span class="dynamic-year">2026</span> Kawizz Photography. All Rights Reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="client-portal.html" class="hover:text-[#e2b774]">Client Portal</a>
+        <a href="contact.html" class="hover:text-[#e2b774]">Book a Session</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FULLSCREEN LIGHTBOX MODAL & EXIF DRAWER -->
+  <div id="lightboxModal" class="inactive fixed inset-0 z-[9999] bg-black/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-6 transition-all duration-300">
+    <div class="flex items-center justify-between border-b border-white/10 pb-4 z-20">
+      <div>
+        <h3 id="lightboxTitle" class="font-serif text-lg md:text-xl font-bold text-white">Photograph Title</h3>
+        <p id="lightboxSubtitle" class="text-xs text-[#e2b774] font-medium">Location • Category</p>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="hidden sm:flex items-center bg-white/10 rounded-lg p-1">
+          <button id="lightboxZoomOut" class="p-1.5 text-gray-300 hover:text-white" title="Zoom Out"><i data-lucide="zoom-out" class="w-4 h-4"></i></button>
+          <span id="zoomLevelDisplay" class="text-xs font-mono px-2 text-[#e2b774]">100%</span>
+          <button id="lightboxZoomIn" class="p-1.5 text-gray-300 hover:text-white" title="Zoom In"><i data-lucide="zoom-in" class="w-4 h-4"></i></button>
+          <button id="lightboxZoomReset" class="p-1.5 text-gray-300 hover:text-white text-xs font-mono ml-1" title="Reset Zoom">1:1</button>
+        </div>
+
+        <button id="lightboxExifToggle" class="p-2 rounded-lg bg-white/10 text-gray-300 hover:text-[#e2b774] hover:bg-white/20 transition-colors" title="Toggle EXIF Metadata">
+          <i data-lucide="info" class="w-5 h-5"></i>
+        </button>
+
+        <button id="lightboxShareBtn" class="p-2 rounded-lg bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 transition-colors" title="Copy Direct Link">
+          <i data-lucide="share-2" class="w-5 h-5"></i>
+        </button>
+
+        <button id="lightboxDownloadBtn" class="btn-gold px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Download Master</span>
+        </button>
+
+        <button id="lightboxClose" class="p-2 rounded-lg bg-white/10 text-gray-300 hover:text-white hover:bg-rose-500/20 transition-colors" title="Close Lightbox (Esc)">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="relative flex-1 flex items-center justify-center overflow-hidden my-4">
+      <button id="lightboxPrev" class="absolute left-2 sm:left-6 z-20 w-12 h-12 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-[#e2b774] hover:text-black transition-all">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <div class="relative max-w-full max-h-full flex items-center justify-center p-2">
+        <img id="lightboxImage" src="" alt="" class="max-h-[75vh] max-w-[85vw] object-contain rounded-lg shadow-2xl transition-transform duration-200" />
+      </div>
+
+      <button id="lightboxNext" class="absolute right-2 sm:right-6 z-20 w-12 h-12 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-[#e2b774] hover:text-black transition-all">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+
+      <div id="lightboxExifPanel" class="hidden absolute top-4 right-4 z-30 w-72 glass-panel p-4 rounded-xl border border-[#e2b774]/30 shadow-2xl text-xs space-y-2">
+        <div class="font-semibold text-[#e2b774] uppercase tracking-wider pb-1 border-b border-white/10 flex items-center justify-between">
+          <span>Camera Metadata</span>
+          <i data-lucide="camera" class="w-4 h-4"></i>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">Camera:</span>
+          <span id="exifCamera" class="font-mono text-white text-right">Sony Alpha 7R V</span>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">Lens:</span>
+          <span id="exifLens" class="font-mono text-white text-right">FE 50mm f/1.2 GM</span>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">Aperture:</span>
+          <span id="exifAperture" class="font-mono text-white">f/1.4</span>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">Shutter:</span>
+          <span id="exifShutter" class="font-mono text-white">1/2000s</span>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">ISO:</span>
+          <span id="exifIso" class="font-mono text-white">ISO 100</span>
+        </div>
+        <div class="flex justify-between text-gray-300">
+          <span class="text-gray-500">Location:</span>
+          <span id="exifLocation" class="font-mono text-white text-right">Ella, Sri Lanka</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between border-t border-white/10 pt-4 z-20 text-xs text-gray-400">
+      <span id="lightboxCounter" class="font-mono text-[#e2b774]">1 / 12</span>
+      <p id="lightboxDescription" class="hidden md:block truncate max-w-xl text-gray-300">Sunlight filtering through the central highlands.</p>
+      <span class="text-[11px] text-gray-500">Use keyboard arrows or swipe</span>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <button id="backToTopBtn" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#1b1c24] border border-[#e2b774]/40 text-[#e2b774] flex items-center justify-center shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:bg-[#e2b774] hover:text-black">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    
+    // Check if query string has category (e.g. ?cat=weddings)
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cat = urlParams.get('cat');
+      if (cat) {
+        const btn = document.querySelector(`.filter-btn[data-filter="${cat}"]`);
+        if (btn) btn.click();
+      }
+    });
+  </script>
+</body>
+</html>
